@@ -1,0 +1,100 @@
+﻿CREATE
+TABLE
+ogrenciler
+(
+	id int(2) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(id),
+    ogrencino int(7) NOT null,
+    sinif int(1) NOT NULL,
+    ayrilma_tarihi date,
+    bolum_id int(2) not null,
+    kimlik_id int(2) NOT null,
+    adres_id int(2)
+);
+
+CREATE
+TABLE
+kimlik_id
+(
+  	id int not null auto_increment,
+    primary key(id),
+    ad varchar(25) not null,
+    soyad varchar(25) not null,
+    tc int(11) not null,
+    dogum_tarihi date,
+    cinsiyet varchar(5) not null,
+    dogum_yeri varchar(15) not null,
+    medeni_hal varchar(5)    
+);
+
+ALTER TABLE kimlik_id RENAME kimlikler;
+
+CREATE
+TABLE
+bolumler
+(
+    id int not null auto_increment,
+    primary key(id),
+    bolum_adi varchar(50) not null,
+    programi varchar(50) not null
+);
+
+INSERT INTO kimlikler
+(
+	ad,soyad,tc,cinsiyet,dogum_yeri,dogum_tarihi,medeni_hal
+)
+VALUES
+(
+	'muhammed','emen',36531263648,'erkek','batman','1995.08.25','bekar'
+)
+
+
+UPDATE ogrenciler SET kimlik_id=1 WHERE ogrencino=1035288
+
+SELECT ad,soyad FROM kimlikler JOIN ogrenciler ON ogrenciler.kimlik_id=kimlikler.id WHERE ogrenciler.ogrencino='1035288'
+
+
+INSERT INTO dersler (ders_adi,kredi) VALUES ('BİLGİSAYAR BAKIM ONARIMI',2);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('İNTERNET PROGRAMCILIĞI',4);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('NESNE TABANLI PROGRAMLAMA',4);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('VERİ TABANI',3);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('AĞ TEMELLERİ',2);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('WEB TASARIM',3);
+INSERT INTO dersler (ders_adi,kredi) VALUES ('GRAFİK VE TASARIM',2);
+
+ALTER TABLE ogretmenler ADD COLUMN (ad varchar(27), soyad varchar(27))
+
+OKUL #|#|#|#|#|#|#|#
+
+ALTER TABLE bilgiler ADD PRIMARY KEY(sira);
+ALTER TABLE bilgiler CHANGE sira sira int(11) AUTO_INCREMENT;
+
+----içinde geçen
+
+SELECT * FROM bilgiler WHERE tel LIKE "53%"
+
+---- Aynı kayıtlardan birer tane gösterme
+
+SELECT DISTINCT cinsiyet from bilgiler
+
+---- Kayıt sayma(toplam kayıt sayısı)
+
+SELECT COUNT(*) from bilgiler
+
+---- Sayısal sütundaki kayıtların toplamını verir
+
+SELECT SUM(sira) from bilgiler
+
+---- numerik veya alfabetik sıralama
+
+SELECT * FROM bilgiler ORDER BY `tel` ASC veya DESC
+
+---- Tablo Birlestirme (Yan yana)
+
+SELECT * FROM bilgiler JOIN ortaklar ON bilgiler.sira=ortaklar.id
+
+---- Tablo Birlestirme (Alt alta)
+
+SELECT * FROM bilgiler
+onion
+SELECT * FROM ortaklar

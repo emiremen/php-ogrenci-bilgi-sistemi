@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+<title>Obs</title>
+<link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+</head>
+<body>
+
+<header id="header">Obs</header>
+
+<nav>
+<ul>
+<li><a href="#">Anasayfa</a></li>
+<li><a href="#">Duyurular</a></li>
+<li><a href="#">Ders Kayıt</a></li>
+<li><a href="#">Ders Programı</a></li>
+</ul>
+</nav>
+
+<section>
+
+<article><header>Baslik</header><p>Merhaba sevgili #no# numaralı öğrencimiz #name#. Okulumuzun öğrenci bilgi sistemine hoşgeldiniz. Öğrenci işlemlerinizi bu sistem üzerinden gerçekleştirebilirsiniz. İşlemlerinizi bitiridikten sonra çıkış yapmayı unutmayınız.</p></article>
+
+
+</section>
+
+<aside><header>yanmenu</header>
+<ul>
+<li>Anasayfa</li>
+<li>Duyurular</li>
+<li>Ders Kayıt</li>
+<li>Ders Programı</li>
+</ul>
+</aside>
+
+<footer>
+  <p>Created by: Muhammed EMEN</p>
+  <p>İletişim: <a href="mailto:mail@mail.com">
+  mail@mail.com</a></p>
+</footer>
+
+</body>
+</html>
